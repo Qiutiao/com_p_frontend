@@ -22,7 +22,10 @@
         </el-col>
 
         <el-col>
-            <el-avatar icon="el-icon-user-solid" fit="cover" shape="square"></el-avatar>
+            <div @click="userOpen">
+                <el-avatar icon="el-icon-user-solid" fit="cover" shape="square"></el-avatar>
+            </div>
+            
         </el-col>
         <!-- 个人中心预留 -->
     </el-row>
@@ -53,6 +56,14 @@ export default {
                     value: 'artist'
                 }
             ]
+        }
+    },
+    methods: {
+        userOpen() {
+            this.$store.dispatch('setLoginBoolean');
+            // if (!cookieTool.get('jwt')) {
+            //     this.$store.dispatch('setLoginBoolean');
+            // }
         }
     }
 }

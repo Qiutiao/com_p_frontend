@@ -6,11 +6,15 @@ import Element from 'element-ui';
 import  'element-ui/lib/theme-chalk/index.css'
 import VuePageStack from 'vue-page-stack';
 import './assets/css/normalize.css';
+import api from './api';
 
 Vue.config.productionTip = false;
 
 Vue.use(Element);
 Vue.use(VuePageStack, { router, keyName: 'ame' });
+Vue.prototype.$api = api;
+
+
 
 new Vue({
   router,
