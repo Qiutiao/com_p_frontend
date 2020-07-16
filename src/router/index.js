@@ -9,9 +9,29 @@ Vue.use(VueRouter)
       name: 'home',
       // component: () => import('./views/DailyRank/DailyRank.vue')
       component: require('../views/DailyRank/DailyRank.vue').default
-    }
-    
-]
+    },
+    {
+      path: '/keywords/:keyword',
+      name: 'keywords',
+      // component: () =>import('./views/SearchResult/SearchResult.vue'),
+      component: require('../views/SearchResult/SearchResult.vue').default,
+      props: true
+    },
+    {
+      path: '/illusts/:pid',
+      name: 'Illusts',
+      // component: () => import('./views/Detail/Detail.vue'),
+      component: require('../views/Detail/Detail.vue').default,
+      props: true
+    },
+    {
+      path: '/artist/:artistId',
+      name: 'Artist',
+      // component: () => import('./views/Artist/Artist.vue'),
+      component: require('../views/Artist/Artist.vue').default,
+      props: true
+    }  
+  ]
 
 const router = new VueRouter({
   mode: 'history',
