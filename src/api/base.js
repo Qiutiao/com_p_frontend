@@ -4,7 +4,7 @@ import router from '../router';
 
 // 创建axios实例
 const instance = axios.create({
-  baseURL: 'https:/api.pixivic.com',
+  baseURL: 'https://api.pixivic.com',//http://localhost:8080
   headers: {
     
   },

@@ -6,10 +6,6 @@ export default {
   dom
 };
 
-export const replaceImg = src => {
-  return `https://test.img.cheerfun.dev/get/${src}`;
-};
-
 export function download(href, cb) {
   const eleLink = document.createElement('a');
   eleLink.download = '';

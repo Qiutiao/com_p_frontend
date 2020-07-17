@@ -30,7 +30,8 @@ Vue.use(VueRouter)
       // component: () => import('./views/Artist/Artist.vue'),
       component: require('../views/Artist/Artist.vue').default,
       props: true
-    }  
+    },
+    ...require('../views/User').default // A 业务路由入口
   ]
 
 const router = new VueRouter({

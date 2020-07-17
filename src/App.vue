@@ -11,7 +11,7 @@
       <el-container>
 
         <!-- 左边栏开始 -->
-        <el-aside style="background-color: #333333" width="64px">
+        <el-aside style="background-color: #fff" width="64px">
           <left-side />
         </el-aside>
         <!-- 左边栏结束 -->
@@ -61,16 +61,17 @@ export default {
 </script>
 
 <style lang="less">
-  .el-header {
-    background-color: #123;
-    text-align: center;
+  #app {
+  .page-container {
+    /deep/ .el-main {
+      padding: 0px;
+    }
   }
-  
-  .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  }
-
+}
+.window-view {
+  min-height: calc(~"100vh - 60px");
+  width: calc(~"100vw - 65px");
+  overflow: auto;
+  background: #fff;
+}
 </style>

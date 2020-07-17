@@ -140,15 +140,70 @@ export default {
         }
         };
     },
+    computed: {},
+    watch: {},
+    mounted() {
+      // this.getCode();
+    },
     methods: {
-        toLogin() {
-        this.resetForm('ruleForm');
-        this.$emit('typeChange');
+    // 获取验证码
+    getCode() {
+      this.$api.user.verificationCode()
+        .then(res => {
+          const { data: { data }} = res;
+          this.imageBase64 = data.imageBase64;
+          this.vid = data.vid;
+        });
+    },
+    // 表单提交
+    submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.register();
+        } else {
+          console.log('error submit!!');
+          return false;
+        }
+      });
+    },
+    // 跳转登录
+    toLogin() {
+      this.resetForm('ruleForm');
+      this.$emit('typeChange');
+    },
+    // 重置数据
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
+    },
+    // 登录
+    register() {
+      const reqBody = {
+        userInfo: {
+          username: this.ruleForm.username.trim(),
+          email: this.ruleForm.email,
+          password: this.ruleForm.password
         },
-        resetForm(formName) {
-        this.$refs[formName].resetFields();
-        },
+        vid: this.vid,
+        value: this.ruleForm.verifyCode
+      };
+      this.$api.user.register(reqBody)
+        .then(res => {
+          if (res.status === 200) {
+            localStorage.setItem('user', JSON.stringify(res.data.data));
+            this.$store.dispatch('setUser', res.data.data);
+            this.$store.dispatch('setLoginBoolean');
+          } else {
+            this.$message.closeAll();
+            this.$message.info(res.data.message);
+          }
+        })
+        .catch(err => {
+          console.error(err);
+        });
+      this.loading = false;
+      this.getCode();
     }
+  }
 }
 </script>
 
