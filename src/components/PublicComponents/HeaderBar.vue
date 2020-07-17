@@ -54,11 +54,11 @@
         </div>
       </el-col>
     </el-row>
-    <SetDialog
+    <!-- <SetDialog
       v-if="settingVisible"
       :setting-visible.sync="settingVisible"
       :user="user"
-    />
+    /> -->
   </div>
 </template>
 

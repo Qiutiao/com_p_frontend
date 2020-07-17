@@ -32,25 +32,8 @@ export default {
             name: '须知',
             icon: 'el-icon-document',
             routePath: '/note'
-          },
-          {
-            id: '2',
-            name: '反馈',
-            icon: 'el-icon-chat-round',
-            routePath: '/bbs'
-          },
-          {
-            id: '3',
-            name: '捐赠',
-            icon: 'el-icon-coffee-cup',
-            routePath: '/donate'
-          },
-          {
-            id: '4',
-            name: '友情链接',
-            icon: 'el-icon-link',
-            routePath: '/remark'
           }
+          
         ]
       };
   },

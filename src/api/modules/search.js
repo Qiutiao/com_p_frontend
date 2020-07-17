@@ -49,7 +49,7 @@ function getTranslations(param) {
 // 图片上传
 function uploadImg(data, params) {
   return axios({
-    url: `https://pic.cheerfun.dev/upload?isTemp=${!params}`,
+    url: `https://localhost:8088/upload?isTemp=${!params}`,
     method: 'post',
     data,
     params

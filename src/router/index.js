@@ -31,6 +31,12 @@ Vue.use(VueRouter)
       component: require('../views/Artist/Artist.vue').default,
       props: true
     },
+    {
+      path: '/note',
+      name: 'Note',
+      // component: () => import('./views/Note/Note.vue')
+      component: require('../views/Note/Note.vue').default
+    },
     ...require('../views/User').default // A 业务路由入口
   ]
 
