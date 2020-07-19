@@ -38,7 +38,7 @@
         </el-badge> -->
         <div style="margin-left:20px;" @click="userOpen">
           <el-dropdown v-if="user.id" trigger="click" :disabled="!user.id" @command="clickMenu">
-            <el-avatar fit="cover" :src="user.id ? `https://pic.cheerfun.dev/${user.id}.png?t=${new Date().getTime()}` : ''" shape="square" />
+            <el-avatar fit="cover" :src="user.id ? `https://Localhost:8088/${user.id}.png?t=${new Date().getTime()}` : ''" shape="square" />
             <el-dropdown-menu slot="dropdown">
               <template>
                 <el-dropdown-item

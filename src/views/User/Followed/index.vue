@@ -64,7 +64,7 @@ export default {
   filters: {
     replaceImg(val) {
       return (
-        'https://img.cheerfun.dev:233/c/360x360_70/img-master' +
+        'https://Localhost:8080/img-master' +
         val.split('img-master')[1]
       );
     }
